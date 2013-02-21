@@ -35,15 +35,13 @@ function sumFactors($x){
 	} while ($i<$o);
 	return ++$factors;
 }
-//get the first factor
-function firstFactor($x,$backwards=false){
+// get the first factor (v2)
+// return: array(0,1)
+function firstFactor($x){
 	$i=2;
 	do {
 		$o=$x/$i;
-		if ($o==round($o)) {
-			if ($backwards) return $o;
-			else return $i;
-		}
+		if ($o==round($o)) return array($i,$o);
 		$i++;
 	} while ($i<$o);
 	return false;
@@ -115,7 +113,6 @@ function bcfact($n){
  * Output : sigma(10) => 55
  * Output : sigma(100) => 5050
  */
-//function sigma($n){ return ($n*($n/2))+($n/2); }
 function sigma($n){ return ($n*($n+1))/2; }
 // BC SIGMA big numbers
 function bcsigma($n){ return bcdiv(bcmul($n,bcadd($n,1)),2); }
@@ -297,7 +294,7 @@ function subStrings($s){
  * Add up all digits in a number
  */
 function addDigits($stringNumber){
-	$sum=0;$i=0;$len=strlen($stringNumber);
+	$stringNumber.='';$sum=0;$i=0;$len=strlen($stringNumber);
 	do { $sum+=$stringNumber[$i];$i++; } while ($i<$len);
 	return $sum;
 }
