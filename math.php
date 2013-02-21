@@ -249,8 +249,12 @@ function sub($a,$b,$base){
 /* INCREASE UNIQUE
  * Make unique sets for given $base
  */
-function inc_uniq($a,$base){
-	//$a=array_fill(0,$length,0); //use to create
+function inc_uniq($a,$base,$autoExpand=false){
+	if (($autoExpand)&&(end($a)==($base-1))) {
+		foreach ($a as &$v) $v=0;
+		$a[0]=1;$a[]=0;
+		return $a;
+	}
 	if ($a[0]==($base-1)) {
 		for ($i=0;$i<count($a);$i++) {
 			if ($a[$i]<($base-1)) {
