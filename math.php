@@ -108,6 +108,7 @@ function bcfact($n){
 	return $factorial;
 }
 
+
 /* SIGMA - SUM (int)
  * Sum all numbers 1...$n
  * Output : sigma(10) => 55
@@ -124,10 +125,11 @@ function bcsigma($n){ return bcdiv(bcmul($n,bcadd($n,1)),2); }
  */
 function sigma2($n){ return ($n*($n+1)*((2*$n)+1))/6; }
 // BC SIGMA^2 big numbers
-function bcsigma2($n){ return bcdiv(bcmul($n*bcadd($n,1),bcadd(bcmul($n,2),1)),6); }
+function bcsigma2($n){ return bcdiv(bcmul(bcmul($n,bcadd($n,1)),bcadd(bcmul($n,2),1)),6); }
 
 /* GRADED 
  * Find out individual grade posibilities when graded by $no Prof.s
+ * $grade (float); grades (int)
  */
 function graded($grade,$no,$min=1,$max=10){
 	$a=array_fill(0,$no,$min);
