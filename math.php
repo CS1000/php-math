@@ -46,6 +46,16 @@ function firstFactor($x){
 	} while ($i<$o);
 	return false;
 }
+/* LCD: LOWEST COMMON DIVISOR
+ * Input: A < B !!!
+ */
+function lcd($a,$b){
+	$i=1;
+	while (++$i<=$a) {
+		if (($a%$i==0)&&($b%$i==0)) return $i;
+	}
+	return false;
+}
 
 /* PRIMES
  * Output: array() | eg. prime=>Nth (2=>1,3=>2,5=>3,7=>4,11=>5,13=>6,17=>7,19=>8...)
