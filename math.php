@@ -24,16 +24,20 @@ function factors($x,$all=false,$onlyCount=false){
 	} while ($i<$o);
 	return $factors;
 }
-//sum all proper divisors (1 included, N excluded)
+//sum all proper divisors (1 included, N excluded) 
 function sumFactors($x){
 	$i=2;
 	$factors=0;
 	do {
 		$o=$x/$i;
-		if ($o==round($o)) $factors+=$i+$o;
+		if ($o==round($o)) {
+			$factors+=$i;
+			if ($i!=$o) $factors+=$o;
+		}
 		$i++;
 	} while ($i<$o);
-	return ++$factors;
+	if ($x==2) return 1;
+	return ++$factors; //add 1
 }
 // get the first factor (v2)
 // return: array(0,1)
