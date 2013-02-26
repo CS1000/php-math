@@ -310,6 +310,15 @@ function subStrings($s){
 	return $ss;
 }
 
+/* WORD SCORE
+ * score a word (eg. 'Bay'=2+1+25=28)
+ */
+function wordScore($word){
+	$word=strtoupper($word);$score=0;
+	for ($i=-1;++$i<strlen($word);) $score+=(ord($word[$i])-64);
+	return $score;
+}
+
 /* ADD DIGITS 
  * Add up all digits in a number
  */
