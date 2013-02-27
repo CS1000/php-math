@@ -143,7 +143,7 @@ function bcsigma2($n){ return bcdiv(bcmul(bcmul($n,bcadd($n,1)),bcadd(bcmul($n,2
 
 /* GRADED 
  * Find out individual grade posibilities when graded by $no Prof.s
- * $grade (float); grades (int)
+ * $grade (float); grades (int) base10! range 1..10 !
  */
 function graded($grade,$no,$min=1,$max=10){
 	$a=array_fill(0,$no,$min);
@@ -156,7 +156,7 @@ function graded($grade,$no,$min=1,$max=10){
 		}
 		$tgr=$sum/$no;
 		if (round($tgr,1)==round($grade,1)) {
-			print_r(array_merge($a,(array)round($tgr,4))); //output 
+			print implode(' ',$a)."\t".round($tgr,4)."\n"; //output 
 		}
 		if ($exit==$no) break;
 		$a=inc_uniq($a,11);
@@ -366,7 +366,7 @@ function spellNumber($number,$separator=' ',$useAND=true){
  */
 function divisor1($n){ return true; }
 /* DIVISOR OF 2 (bool)
- * Evaluate if very big integer (dressed in string) is divisible
+ * Evaluate if very big integer is divisible
  * Input: (string) !!!
  * Output : true/false
  */
@@ -375,7 +375,7 @@ function divisor2($n){
 	return (($last=='0')||($last=='2')||($last=='4')||($last=='6')||($last=='8'));
 }
 /* DIVISOR OF 3 (bool)
- * Evaluate if very big integer (dressed in string) is divisible
+ * Evaluate if very big integer is divisible
  * Fallback on engine math if it can handle it //(Slower)???
  * Input: (string) !!!
  * Output : true/false
@@ -392,7 +392,7 @@ function divisor3($n){
 	}
 }
 /* DIVISOR OF 4 (bool)
- * Evaluate if very big integer (dressed in string) is divisible
+ * Evaluate if very big integer is divisible
  * Fallback on engine math if it can handle it
  * Input: (string) !!!
  * Output : true/false
@@ -408,7 +408,7 @@ function divisor4($n){
 	}
 }
 /* DIVISOR OF 5 (bool)
- * Evaluate if very big integer (dressed in string) is divisible
+ * Evaluate if very big integer is divisible
  * Input: (string) !!!
  * Output : true/false
  */
@@ -417,7 +417,7 @@ function divisor5($n){
 	return (($last=='0')||($last=='5'));
 }
 /* DIVISOR OF 6 (bool)
- * Evaluate if very big integer (dressed in string) is divisible
+ * Evaluate if very big integer is divisible
  * Input: (string) !!!
  * Output : true/false
  */
@@ -428,7 +428,7 @@ function divisor6($n){
 	} else return (divisor2($n)&&divisor3($n)); 
 }
 /* DIVISOR OF 7 (bool)
- * Evaluate if very big integer (dressed in string) is divisible
+ * Evaluate if very big integer is divisible
  * Input: (string) !!!
  * Output : true/false
  */
@@ -584,7 +584,7 @@ Division by 20:
 Apply the rules for 4 and 5. If the number passes both tests, it is divisible by 20.
 
 Division by 21:
-Apply the rule for 3 and one of the rules fo 7. 
+Apply the rule for 3 and one of the rules for 7. 
 If the number passes both tests, it is divisible by 21.
 
 Division by 22:
