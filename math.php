@@ -61,6 +61,38 @@ function lcd($a,$b){
 	return false;
 }
 
+/* PRIME FACTORS
+ * Needs a prime slieve !!!
+ * Will return all primes that factor in the number (and their powers) unless $howMany is set over 1
+ * Will return false is $howMany is set and prime factors differ from $howMany (except value 1)
+ * - using this with a prime number will just waste time
+ */
+function primeFactors($x,&$primeList,$howMany=0) {
+	$result=array();
+	foreach ($primeList as $p=>$no) {
+		if ($p>$x) break;
+		$o=$x/$p;
+		if ($o==round($o)) {
+			if (isset($primeList[$o])) {
+				$result[$o]=1;
+				if ($o!=$p) $result[$p]=1;
+				else $result[$o]=2;
+				break;
+			}
+			if (($howMany>1)&&((count($result)+1)>$howMany)) return false;
+			$result[$p]=0;
+			while ($o==round($o)) {
+				$result[$p]++;
+				$o=$o/$p; // ceil/temp_var/if_break/etc. ? for large numbers
+			}
+			$x=$o*$p;
+		}
+	}
+	$c=count($result);
+	if (($howMany>1)&&($c!=$howMany)) return false;
+	return $result;
+}
+
 /* PRIMES
  * Output: array() | eg. prime=>Nth (2=>1,3=>2,5=>3,7=>4,11=>5,13=>6,17=>7,19=>8...)
  */
