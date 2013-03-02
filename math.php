@@ -294,6 +294,30 @@ function sub($a,$b,$base){
 	//else return false;
 }
 
+/* PERMUTE
+ * Return next lexicographic permutation of the array
+ */
+function permute($array) {
+	$r=array(); //create tail arr
+	$r[]=$end=array_pop($array); //start with last element
+	while (end($array)>$end) $r[]=$end=array_pop($array); //shortening input arr => tail arr
+	$end=array_pop($array); //last one remaining needs to change
+	sort($r); //sort tail
+	$i=0;while ($r[$i]<$end) $i++; //while tail (get minimum, greater than last element)
+	$array[]=$r[$i]; //add next one (increase)
+	unset($r[$i]); //rm next one from tail
+	$r[]=$end; //add last one in tail
+	sort($r); //sort tail
+	
+	/* //auto-stop version
+	$r=array_merge($array,$r);
+	if ($r!=$a) return $r;
+	else return false;
+	*/
+	
+	return array_merge($array,$r);
+}
+
 /* INCREASE UNIQUE
  * Make unique sets for given $base
  */
