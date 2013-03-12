@@ -60,9 +60,28 @@ function lcd($a,$b){
 	}
 	return false;
 }
+/* LCM: LOWEST COMMON MULTIPLE
+ * Input: array() !!!
+ */
+function lcm($a){
+	rsort($a);
+	$lcm=1;
+	$i=1;
+	while (++$i<$a[0]) { //todo:could be better
+		$use=false;
+		foreach ($a as $k=>$no) if ($no%$i==0) {
+			$use=true;
+			if ($a[$k]==$i) unset($a[$k]);
+			else $a[$k]=$no/$i;
+		}
+		if ($use) $lcm*=$i;
+	}
+	foreach ($a as $no) $lcm*=$no;
+	return $lcm;
+}
 
 /* PRIME FACTORS
- * Needs a prime slieve !!!
+ * Needs a prime slieve !!! with primes as keys !!!
  * Will return all primes that factor in the number (and their powers) unless $howMany is set over 1
  * Will return false is $howMany is set and prime factors differ from $howMany (except value 1)
  * - using this with a prime number will just waste time
@@ -133,7 +152,17 @@ function is_prime($x){
 function unpow($n,$backwards=false){
 	//could have been used log() for this [REQ: test which is faster]
 	if ($backwards) $j=floor(sqrt($n));else $j=2;
-	while (((!$backwards)&&($j<=sqrt($n)))||(($backwards)&&($j>1))) {
+	while (
+			(
+				(
+					!$backwards
+				) && (
+					$j<=sqrt($n)
+				)
+			) || (
+				($backwards) && ($j>1)
+			)
+		) {
 		$e=2;
 		do {
 			$new=pow($j,$e);
@@ -298,16 +327,16 @@ function sub($a,$b,$base){
  * Return next lexicographic permutation of the array
  */
 function permute($array) {
-	$r=array(); //create tail arr
-	$r[]=$end=array_pop($array); //start with last element
+	$r=array(); 
+	$r[]=$end=array_pop($array); 
 	while (end($array)>$end) $r[]=$end=array_pop($array); //shortening input arr => tail arr
 	$end=array_pop($array); //last one remaining needs to change
-	sort($r); //sort tail
+	sort($r); 
 	$i=0;while ($r[$i]<$end) $i++; //while tail (get minimum, greater than last element)
-	$array[]=$r[$i]; //add next one (increase)
-	unset($r[$i]); //rm next one from tail
-	$r[]=$end; //add last one in tail
-	sort($r); //sort tail
+	$array[]=$r[$i]; 
+	unset($r[$i]);
+	$r[]=$end;
+	sort($r); 
 	
 	/* //auto-stop version
 	$r=array_merge($array,$r);
@@ -345,6 +374,28 @@ function inc_uniq($a,$base,$autoExpand=false){
 function strip0($n){
 	while (($n[0]=='0')&&(strlen($n)>1)) $n=substr($n,1);
 	return $n;
+}
+
+/* REPEATING SUB STRING
+ * Get the first (shortest) repeating substring
+ * Useful with fractions::repeating decimals
+ */
+function repeatingSubString($s){
+	$idx=0;$i=1;
+	$half=floor(strlen($s)/2);
+	while ($i<$half) {
+		$sub=$t=substr($s,$idx,$i);
+		//print $sub."\t";
+		if (strpos($s,$sub,$idx+1)===false) {
+			if ($idx>=$half) break;
+			$idx++;$i=0;
+			goto end;
+		}
+		while (strlen($t.$sub)<(strlen($s)-$idx)) $t.=$sub; //todo:improve
+		if (strpos($s,$t)!==false) return $sub;
+		end: $i++;
+	}
+	return false;
 }
 
 /* SUB STRINGS (array)
