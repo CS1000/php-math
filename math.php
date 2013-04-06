@@ -575,6 +575,7 @@ function divisor7($n){
 		return ($f==round($f));
 	}
 }
+
 /*
 Division by 8:
 Check the last three digits of the number. If it forms an integer that is divisible by 8, 

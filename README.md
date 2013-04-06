@@ -1,8 +1,7 @@
 php-math
 ========
 
-Collection of mathematical and math related 
-<code>functions</code>
+Collection of mathematical and math related functions
 
 <h3> FACTORS - DIVISORS (array)</h3>
  * Get all divisors of $x
