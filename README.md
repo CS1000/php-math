@@ -1,207 +1,207 @@
 php-math
 ========
 
-Collection of mathematical and math related functions
+Collection of mathematical and math related <b>functions</b>
 
-/* FACTORS - DIVISORS (array)
+<h2> FACTORS - DIVISORS (array)</h2>
  * Get all divisors of $x
  * if $all==true return the other half
  * Output #1 (default): factors(10) => array(1=>10,2=>5)
  * Output #2 : factors(10,true) => array(1=>10,2=>5,5=>2,10=>1)
- */
-function factors($x,$all=false,$onlyCount=false)
+  
+<b>function factors($x,$all=false,$onlyCount=false)</b>
 
 //sum all proper divisors (1 included, N excluded) 
-function sumFactors($x)
+<b>function sumFactors($x)</b>
 
 // get the first factor (v2)
 // return: array(0,1)
-function firstFactor($x)
+<b>function firstFactor($x)</b>
 
-/* LCD: LOWEST COMMON DIVISOR
+<h2> LCD: LOWEST COMMON DIVISOR</h2>
  * Input: A < B !!!
- */
-function lcd($a,$b)
+  
+<b>function lcd($a,$b)</b>
 
-/* LCM: LOWEST COMMON MULTIPLE
+<h2> LCM: LOWEST COMMON MULTIPLE</h2>
  * Input: array() !!!
- */
-function lcm($a)
+  
+<b>function lcm($a)</b>
 
-/* PRIME FACTORS
+<h2> PRIME FACTORS</h2>
  * Needs a prime slieve !!! with primes as keys !!!
  * Will return all primes that factor in the number (and their powers) unless $howMany is set over 1
  * Will return false is $howMany is set and prime factors differ from $howMany (except value 1)
  * - using this with a prime number will just waste time
- */
-function primeFactors($x,&$primeList,$howMany=0)
+  
+<b>function primeFactors($x,&$primeList,$howMany=0)</b>
 
-/* PRIMES
+<h2> PRIMES</h2>
  * Output: array() | eg. prime=>Nth (2=>1,3=>2,5=>3,7=>4,11=>5,13=>6,17=>7,19=>8...)
- */
-function primes($max)
+  
+<b>function primes($max)</b>
 
-/* IS PRIME
+<h2> IS PRIME</h2>
  * Output: bool (true/false)
- */
-function is_prime($x)
+  
+<b>function is_prime($x)</b>
 
-/* UN-POWER 
+<h2> UN-POWER </h2>
  * Default:   Return lowest base at highest power
  * Backwards: Return highest base -at least squared-
  * Fallback:  Return the number itself at power 1
  * eg. unpow(1024) => array(2,10)
  * eg. unpow(1024,true) => array(32,2)
- */
-function unpow($n,$backwards=false)
+  
+<b>function unpow($n,$backwards=false)</b>
 
-/* BC FACTORIAL
+<h2> BC FACTORIAL</h2>
  * n! = n * (n-1) * (n-2) .. 1 [eg. 5! = 5 * 4 * 3 * 2 * 1 = 120]
- */
-function bcfact($n)
+  
+<b>function bcfact($n)</b>
 
-/* SIGMA - SUM (int)
+<h2> SIGMA - SUM (int)</h2>
  * Sum all numbers 1...$n
  * Output : sigma(10) => 55
  * Output : sigma(100) => 5050
- */
-function sigma($n)
+  
+<b>function sigma($n)</b>
 
 // BC SIGMA big numbers
-function bcsigma($n)
+<b>function bcsigma($n)</b>
 
-/* SIGMA^2 - SUM^2 (int)
+<h2> SIGMA^2 - SUM^2 (int)</h2>
  * Sum all numbers 1^2...$n^2
  * Output : sigma2(4) => 30
  * Output : sigma2(10) => 385
- */
-function sigma2($n)
+  
+<b>function sigma2($n)</b>
 
 // BC SIGMA^2 big numbers
-function bcsigma2($n)
+<b>function bcsigma2($n)</b>
 
-/* GRADED 
+<h2> GRADED </h2>
  * Find out individual grade posibilities when graded by $no Prof.s
  * $grade (float); grades (int) base10! range 1..10 !
- */
-function graded($grade,$no,$min=1,$max=10)
+  
+<b>function graded($grade,$no,$min=1,$max=10)</b>
 
-/* Kaprekar 
+<h2> Kaprekar </h2>
  * Input: (string) !!!!
  * Unknown effects for sting length other than 3 or 4 !!! MIGHT LOOP 4ever
-*/
-function kaprekar($x,$c=0)
+ 
+<b>function kaprekar($x,$c=0)</b>
 
-/* Kaprekar BASE b = 6t+3, t>1 (15,21...) (constant length will be 5)
+<h2> Kaprekar BASE b = 6t+3, t>1 (15,21...) (constant length will be 5)</h2>
  * Input: (array) !!!!
  * Output: (int) number of stages to get to the constant
  * Unknown effects for Base != ^above^ !!! MIGHT LOOP 4ever
-*/
-function kaprekarB($x,$base,$c=0,$orig=array())
+ 
+<b>function kaprekarB($x,$base,$c=0,$orig=array())</b>
 
-/* Collatz Sequence
+<h2> Collatz Sequence</h2>
  * Return NEXT Collatz number in Sequence !
  * Input: (string/int)
-*/
-function Collatz($n)
+ 
+<b>function Collatz($n)</b>
 
-/* ADD a+b (in base $base)
+<h2> ADD a+b (in base $base)</h2>
  * Input: $a, $b (array) !!! A>B !
  * Output: (array) !!!
- */
-function add($a,$b,$base)
+  
+<b>function add($a,$b,$base)</b>
 
-/* SUBSTRACT a-b (in base $base)
+<h2> SUBSTRACT a-b (in base $base)</h2>
  * Input: $a, $b (array) !!! A>B !!!
  * Output: (array) !!!
- */
-function sub($a,$b,$base)
+  
+<b>function sub($a,$b,$base)</b>
 
-/* PERMUTE
+<h2> PERMUTE</h2>
  * Return next lexicographic permutation of the array
- */
-function permute($array)
+  
+<b>function permute($array)</b>
 
-/* INCREASE UNIQUE
+<h2> INCREASE UNIQUE</h2>
  * Make unique sets for given $base
- */
-function inc_uniq($a,$base,$autoExpand=false)
+  
+<b>function inc_uniq($a,$base,$autoExpand=false)</b>
 
-/* STRIP ZEROES (string)
+<h2> STRIP ZEROES (string)</h2>
  * Strip leading zeroes
  * Output : strip0('00009') => 9
- */
-function strip0($n)
+  
+<b>function strip0($n)</b>
 
-/* REPEATING SUB STRING
+<h2> REPEATING SUB STRING</h2>
  * Get the first (shortest) repeating substring
  * Useful with fractions::repeating decimals
- */
-function repeatingSubString($s)
+  
+<b>function repeatingSubString($s)</b>
 
-/* SUB STRINGS (array)
+<h2> SUB STRINGS (array)</h2>
  * Get all posible substrings from (string) $s
  * Output : subStrings('1234') => array('1234','123','234','12','23','34','1','2','3','4')
  * Output : subStrings('abc') => array('abc','ab','bc','a','b','c')
- */
-function subStrings($s)
+  
+<b>function subStrings($s)</b>
 
-/* WORD SCORE
+<h2> WORD SCORE</h2>
  * score a word (eg. 'Bay'=2+1+25=28)
- */
-function wordScore($word)
+  
+<b>function wordScore($word)</b>
 
-/* ADD DIGITS 
+<h2> ADD DIGITS </h2>
  * Add up all digits in a number
- */
-function addDigits($stringNumber)
+  
+<b>function addDigits($stringNumber)</b>
 
-/* SPELL NUMBER
+<h2> SPELL NUMBER</h2>
  * Up to 999 in English (translate for more langs)
- */
-function spellNumber($number,$separator=' ',$useAND=true)
+  
+<b>function spellNumber($number,$separator=' ',$useAND=true)</b>
 
-/* DIVISOR OF 1 (bool)
- * Dummy function
+<h2> DIVISOR OF 1 (bool)</h2>
+ * Dummy <b>function</b>
  * Output : true !!!
- */
-function divisor1($n)
+  
+<b>function divisor1($n)</b>
 
-function divisor2($n)
+<b>function divisor2($n)</b>
 
-/* DIVISOR OF 3 (bool)
+<h2> DIVISOR OF 3 (bool)</h2>
  * Evaluate if very big integer is divisible
  * Fallback on engine math if it can handle it //(Slower)???
  * Input: (string) !!!
  * Output : true/false
- */
-function divisor3($n)
+  
+<b>function divisor3($n)</b>
 
-/* DIVISOR OF 4 (bool)
+<h2> DIVISOR OF 4 (bool)</h2>
  * Evaluate if very big integer is divisible
  * Fallback on engine math if it can handle it
  * Input: (string) !!!
  * Output : true/false
- */
-function divisor4($n)
+  
+<b>function divisor4($n)</b>
 
-/* DIVISOR OF 5 (bool)
+<h2> DIVISOR OF 5 (bool)</h2>
  * Evaluate if very big integer is divisible
  * Input: (string) !!!
  * Output : true/false
- */
-function divisor5($n)
+  
+<b>function divisor5($n)</b>
 
-/* DIVISOR OF 6 (bool)
+<h2> DIVISOR OF 6 (bool)</h2>
  * Evaluate if very big integer is divisible
  * Input: (string) !!!
  * Output : true/false
- */
-function divisor6($n)
+  
+<b>function divisor6($n)</b>
 
-/* DIVISOR OF 7 (bool)
+<h2> DIVISOR OF 7 (bool)</h2>
  * Evaluate if very big integer is divisible
  * Input: (string) !!!
  * Output : true/false
- */
-function divisor7($n)
+  
+<b>function divisor7($n)</b>
