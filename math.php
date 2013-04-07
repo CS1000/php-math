@@ -592,10 +592,7 @@ If the last digit is 0, then the number is divisible by 10.
 Division by 11:
 Alternately add and subtact all of the digits of the number, starting with subtraction on 
 the second digit. If the result is 0 or any number divisible by 11, then so is the number.
-For example, consider the number 119637360799. If we compute
-
-1-1+9-6+3-7+3-6+0-7+9-9
-
+For example, consider the number 119637360799. If we compute 1-1+9-6+3-7+3-6+0-7+9-9
 we get a total of -11. Since -11 is divisible by 11, so is 119637360799.
 
 Division by 12:
@@ -608,12 +605,10 @@ Repeat this process until you arrive at a smaller number whose divisiblity you k
 If this smaller number is divisible by 13, then so is the larger number. 
 If this smaller number is not divisible by 13, then neither is the larger number. 
 For example, let's check the divisibility of 399074:
-
 399074, 4x9 = 36 and 39907-36 = 39871
 39871, 1x9 = 9 and 3987-9 = 3978
 3978, 8x9 = 72 and 397-72 = 325
 325, 5x9 = 45 and 32-45 = -13
-
 Since -13 divisible by 13, then 399074 is also divisible by 13.
 
 Division by 13--Second Method:
@@ -622,12 +617,10 @@ Repeat this process until you arrive at a smaller number whose divisiblity you k
 If this smaller number is divisible by 13, then so is the larger number. 
 If this smaller number is not divisible by 13, then neither is the larger number. 
 For example, let's check the divisibility of 399074:
-
 399074, 4x4 = 16 and 39907+16 = 39923
 39923, 3x4 = 12 and 3992+12 = 4004
 4004, 4x4 = 16 and 400+16 = 416
 416, 6x4 = 24 and 41+24 = 65
-
 Since 65 divisible by 13, then 399074 is also divisible by 13.
 
 Division by 13--Third Method:
@@ -664,12 +657,10 @@ Repeat this process until you arrive at a smaller number whose divisiblity you k
 If this smaller number is divisible by 17, then so is the larger number. 
 If this smaller number is not divisible by 17, then neither is the larger number.
 For example, let's check the divisibility of 521172:
-
 521172, 2x5 = 10 and 52117-10 = 52107
 52107, 7x5 = 35 and 5210-35 = 5175
 5175, 5x5 = 25 and 517-25 = 492
 492, 2x5 = 10 and 49-10 = 39
-
 Since 39 is not divisible by 17, then neither is 521172.
 
 Division by 18:
@@ -681,11 +672,9 @@ Repeat this process until you arrive at a smaller number whose divisiblity you k
 If this smaller number is divisible by 19, then so is the larger number. 
 If this smaller number is not divisible by 19, then neither is the larger number. 
 For example, let's check the divisibility of 12483:
-
 12483, 3x2 = 6 and 1248+6 = 1254
 1254, 4x2 = 8 and 125+8 = 133
 133, 3x2 = 6 and 13+6 = 19
-
 Since 19 is divisible by 19, then so is 12483.
 
 Division by 20:
@@ -730,11 +719,9 @@ Repeat this process until you arrive at a smaller number whose divisiblity you k
 If this smaller number is divisible by 27, then so is the larger number. 
 If this smaller number is not divisible by 27, then neither is the larger number. 
 For example, let's check the divisibility of 10962:
-
 10962, 2x8 = 16 and 1096-16 = 1080
 1080, 0x8 = 0 and 108-0 = 108
 108, 8x8 = 64 and 10-64 = -54
-
 Since -54 is divisible by 27, 10962 is also divisible by 27.
 
 Division by 28:
@@ -747,11 +734,9 @@ Repeat this process until you arrive at a smaller number whose divisiblity you k
 If this smaller number is divisible by 29, then so is the larger number. 
 If this smaller number is not divisible by 29, then neither is the larger number. 
 For example, let's check the divisibility of 24273:
-
 24273, 3x3 = 9 and 2427+9 = 2436
 2436, 6x3 = 18 and 243+18 = 261
 261, 1x3 = 3 and 26+3 = 29
-
 Since 29 is divisible by 29, then 24273 is as well.
 
 Division by 30:
@@ -764,7 +749,6 @@ Repeat this process until you arrive at a smaller number whose divisiblity you k
 If this smaller number is divisible by 31, then so is the larger number. 
 If this smaller number is not divisible by 31, then neither is the larger number. 
 For example, let's check the divisibility of 504273:
-
 504273, 3x3 = 9 and 50427-9 = 50418
 50418, 8x3 = 24 and 5041-24 = 5017
 5017, 7x3 = 21 and 501-21 = 480
@@ -796,7 +780,6 @@ Take the last three digits of the number and add this to the number formed by
 the remaining digits. Repeat this process until you end up with a number that has 
 at most three digits. If the remaining number is divisible by 37, then so is the larger 
 number. For example, let's test the divisibility of 361975218:
-
 361975218, 361975+218 = 362193
 362193, 362+193 = 555
 Since 555 is divisible by 37, then 361975218 is also divisible by 37.
@@ -817,13 +800,12 @@ Repeat this process until you arrive at a smaller number whose divisiblity you k
 If this smaller number is divisible by 41, then so is the larger number.
 If this smaller number is not divisible by 41, then neither is the larger number. 
 For example, let's check the divisibility of 142311:
-
 142311, 1x4 = 4 and 14231-4 = 14227
 14227, 7x4 = 28 and 1422-28 = 1394
 1394, 4x4 = 16 and 139-16 = 123
 123, 3x4 = 12 and 12-12 = 0
 Since 0 is divisible by 41, then so is 142311.
 
-http://en.wikipedia.org/wiki/Divisibility_rule#Beyond_20 (21..1000)
++ http://en.wikipedia.org/wiki/Divisibility_rule#Beyond_20 (21..1000)
 */
 ?>
