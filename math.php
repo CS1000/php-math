@@ -467,6 +467,13 @@ function spellNumber($number,$separator=' ',$useAND=true){
 	return $ret;
 }
 
+/** POUNDS
+ * Convert KG into Pounds
+ * Output: (float)
+ * @param (number) $kg
+ */
+function £($kg) { return $kg*2.20462262; }
+
 /** DIVISOR OF 1 (bool)
  * Dummy function
  * Output : true !!!
