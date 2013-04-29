@@ -1,4 +1,6 @@
 <?php
+const π="3.1415926535897932384626433832795028841971693993751058209749445923"; //64 digits
+
 /** FACTORS - DIVISORS (array)
  * Get all divisors of $x
  * if $all==true return the other half
