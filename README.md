@@ -210,3 +210,5 @@ Collection of mathematical and math related functions
  * Output : true/false
 
 <code>function divisor7($n)</code>
+
+Licensed to the Public Domain
